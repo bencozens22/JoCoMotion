@@ -1,0 +1,320 @@
+/* body */
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Set multiple background images */
+  background-image: 
+      url("../images/Rainbow01.png"), /* Image for the top half */
+      url("../images/Rainbow02.png"); /* Image for the bottom half */
+  /* Set background size and position */
+  background-size: auto; /* Adjusts the background image size to cover the entire container */
+  background-position: top, bottom;
+}
+
+/* header */
+
+.header, .footer {
+    height: 70px;
+    background-color: #fff6f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+  }
+
+  #logo {
+    width: 180px;
+    height:30px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .button {
+    height: 30px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .button svg {
+    width: 30px; /* Adjust the size of the SVG icons */
+    height: 30px; /* Adjust the size of the SVG icons */
+  }
+
+  .button.instagram,
+  .button.linkedin,
+  .button.facebook {
+    width: 30px; /* Set width and height to make them squares */
+    height: 30px; /* Set width and height to make them squares */
+    background-color: none;
+    border-radius: 5px;
+  }
+
+  .button.contact {
+    background-color: #ff66c4;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  svg {
+    color: black;
+  }
+
+  /* Media query for smaller devices */
+
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+    }
+
+    .nav {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      margin: 5px;
+    }
+
+  }
+
+/* video showreel */
+
+.video-container {
+    display: grid;
+    margin-top: 0;
+    place-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#showreel-video {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+@media (max-width: 768px)
+{
+    #showreel-video {
+        width: 100%;
+    }
+
+    .video-container {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .button svg {
+        width: 20px; /* Adjust the size of the SVG icons */
+        height: 20px; /* Adjust the size of the SVG icons */
+      }
+
+    #logo {
+        width: 140px;
+        height: 25px;
+    }
+
+    .button.contact {
+        background-color: #ff66c4;
+        width: 80px;
+        height: 23px;
+        border-radius: 5px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 390px)
+{
+    #showreel-video {
+        width: 100%;
+    }
+
+    .video-container {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .button svg {
+        width: 20px; /* Adjust the size of the SVG icons */
+        height: 20px; /* Adjust the size of the SVG icons */
+      }
+
+    #logo {
+        width: 140px;
+        height: 25px;
+    }
+}
+
+/* about me section */
+#about-me-section > .container > h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+#about-me-section > .container > p {
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+p {
+  font-family: "roc-grotesk", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* animation gallery */
+
+.animation-gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.animation-gallery-container img {
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+}
+
+#animation-1 {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+#animation-2 {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+#animation-3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#animation-4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+@media (max-width: 768px)
+{
+    .animation-gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .animation-gallery-container img {
+      height: 150px;
+      width: 150px;
+      margin: 5px;
+  }
+}
+
+/* Let's work together */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.grid-container-reverse {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+h4, p {
+  margin: 0;
+}
+
+.grid-item:first-child {
+  border-right: 2px solid black;
+}
+
+@media (max-width: 768px) {
+  .grid-container, .grid-container-reverse{
+      grid-template-columns: 1fr;
+  }
+  .grid-item:first-child {
+      border-right: none;
+      border-bottom: 2px solid black;
+  }
+}
+
+/* contact form */
+
+#contact-form-section {
+  text-align: center;
+}
+
+.form-row {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* footer */
+
+#footer {
+  margin-top: 30px;
+}
+
+.footer {
+  height: 70px;
+  background-color: #fff6f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 1px solid black;
+}
