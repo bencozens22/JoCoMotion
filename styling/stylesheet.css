@@ -250,6 +250,7 @@ p {
   grid-template-columns: 1fr 2fr;
   border: 2px solid black;
   margin-bottom: 20px;
+  background-color: #fffcfa;
 }
 
 .grid-container-reverse {
@@ -257,6 +258,7 @@ p {
   grid-template-columns: 2fr 1fr;
   border: 2px solid black;
   margin-bottom: 20px;
+  background-color: #fffcfa;
 }
 
 .grid-item {
@@ -288,6 +290,10 @@ h4, p {
 
 /* contact form */
 
+h2 {
+  margin-top: 40px;
+}
+
 #contact-form-section {
   text-align: center;
 }
@@ -303,6 +309,10 @@ h4, p {
   }
 }
 
+.btn-primary {
+  border: none
+}
+
 /* footer */
 
 #footer {
@@ -310,7 +320,7 @@ h4, p {
 }
 
 .footer {
-  height: 70px;
+  height: 100px;
   background-color: #fff6f0;
   display: flex;
   align-items: center;
