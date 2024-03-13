@@ -302,6 +302,11 @@ h2 {
   justify-content: center;
 }
 
+.form-control {
+  background-color: #ff66c4;
+  opacity: 90%;
+}
+
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
@@ -310,7 +315,9 @@ h2 {
 }
 
 .btn-primary {
-  border: none
+  border: none;
+  background-color: #ff66c4;
+  opacity: 90%;
 }
 
 /* footer */
