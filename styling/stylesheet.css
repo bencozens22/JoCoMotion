@@ -5,8 +5,7 @@ body {
   padding: 0;
   /* Set multiple background images */
   background-image: 
-      url("../images/Rainbow01.png"), /* Image for the top half */
-      url("../images/Rainbow02.png"); /* Image for the bottom half */
+      url("../images/Rainbow01.png"); /* Image for the top half */ /* Image for the bottom half */
   /* Set background size and position */
   background-size: auto; /* Adjusts the background image size to cover the entire container */
   background-position: top, bottom;
@@ -22,6 +21,7 @@ body {
     justify-content: space-between;
     padding: 0 20px;
     border-bottom: 1px solid black;
+    border-top: 1px solid black;
   }
 
   #logo {
@@ -68,7 +68,7 @@ body {
     color: white;
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 13px;
+    font-size:12px;
     font-family: "roc-grotesk", sans-serif;
     font-weight: 500;
     font-style: normal;
