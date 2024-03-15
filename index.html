@@ -153,37 +153,37 @@
         contactFormSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Function to adjust grid container classes and swap grid items based on screen width
-    function adjustGridClassesAndSwapItems() {
-        const screenWidth = window.innerWidth;
-        const gridContainersReverse = document.querySelectorAll('.grid-container-reverse');
+// Function to adjust grid container classes and swap grid items based on screen width
+// Function to swap grid items inside .grid-container-reverse
+function swapGridItems() {
+  const gridContainersReverse = document.querySelectorAll('.grid-container-reverse');
 
-        gridContainersReverse.forEach(container => {
-            const gridItems = container.querySelectorAll('.grid-item');
+  gridContainersReverse.forEach(container => {
+    const gridItems = container.querySelectorAll('.grid-item');
 
-            // Toggle class based on screen width
-            if (screenWidth <= 768) {
-                container.classList.remove('grid-container-reverse');
-                container.classList.add('grid-container');
-            } else {
-                container.classList.remove('grid-container');
-                container.classList.add('grid-container-reverse');
-            }
-
-            // Swap grid items if there are exactly two and screen width is 768px or less
-            if (gridItems.length === 2 && screenWidth <= 768) {
-                const firstItem = gridItems[0];
-                const secondItem = gridItems[1];
-                container.insertBefore(secondItem, firstItem);
-            }
-        });
+    // Swap grid items if there are exactly two
+    if (gridItems.length === 2) {
+      const firstItem = gridItems[0];
+      const secondItem = gridItems[1];
+      container.insertBefore(secondItem, firstItem);
     }
+  });
+}
 
-    // Event listener for window load
-    window.addEventListener('load', adjustGridClassesAndSwapItems);
+// Function to handle screen resize
+function handleScreenResize() {
+  const screenWidth = window.innerWidth;
 
-    // Event listener for window resize
-    window.addEventListener('resize', adjustGridClassesAndSwapItems);
+  // Call the function to swap grid items on screen resize
+  swapGridItems();
+}
+
+// Event listener for window load
+window.addEventListener('load', swapGridItems);
+
+// Event listener for window resize
+window.addEventListener('resize', handleScreenResize);
+
 </script>
 
 </body>
