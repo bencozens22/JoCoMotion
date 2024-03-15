@@ -155,7 +155,20 @@
 
 // Function to adjust grid container classes and swap grid items based on screen width
 // Function to swap grid items inside .grid-container-reverse
-function swapGridItems() {
+// Function to debounce a function call
+function debounce(func, delay) {
+  let timeout;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), delay);
+  };
+}
+
+// Function to adjust grid container classes and swap grid items based on screen width
+function adjustGridClassesAndSwapItems() {
+  const screenWidth = window.innerWidth;
   const gridContainersReverse = document.querySelectorAll('.grid-container-reverse');
 
   gridContainersReverse.forEach(container => {
@@ -170,19 +183,15 @@ function swapGridItems() {
   });
 }
 
-// Function to handle screen resize
-function handleScreenResize() {
-  const screenWidth = window.innerWidth;
-
-  // Call the function to swap grid items on screen resize
-  swapGridItems();
-}
+// Function to handle screen resize (debounced)
+const debouncedResize = debounce(adjustGridClassesAndSwapItems, 250);
 
 // Event listener for window load
-window.addEventListener('load', swapGridItems);
+window.addEventListener('load', adjustGridClassesAndSwapItems);
 
-// Event listener for window resize
-window.addEventListener('resize', handleScreenResize);
+// Event listener for debounced window resize
+window.addEventListener('resize', debouncedResize);
+
 
 </script>
 
