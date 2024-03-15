@@ -165,6 +165,18 @@ function debounce(func, delay) {
 }
 
 // Function to adjust grid container classes and swap grid items based on screen width
+// Function to debounce a function call
+function debounce(func, delay) {
+  let timeout;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), delay);
+  };
+}
+
+// Function to adjust grid container classes and swap grid items based on screen width
 function adjustGridClassesAndSwapItems() {
   const screenWidth = window.innerWidth;
   const gridContainersReverse = document.querySelectorAll('.grid-container-reverse');
@@ -193,11 +205,17 @@ function adjustGridClassesAndSwapItems() {
 // Debounce the adjustment function to avoid frequent execution
 const debouncedAdjustment = debounce(adjustGridClassesAndSwapItems, 250);
 
+// Function to handle screen resize
+function handleScreenResize() {
+  adjustGridClassesAndSwapItems(); // Call the adjustment function directly
+}
+
 // Event listener for window load
 window.addEventListener('load', adjustGridClassesAndSwapItems);
 
-// Event listener for window resize
+// Event listener for debounced window resize
 window.addEventListener('resize', debouncedAdjustment);
+
 
 
 
