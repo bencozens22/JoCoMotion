@@ -159,8 +159,6 @@ function swapGridItems() {
 
   gridContainersReverse.forEach(container => {
     const gridItems = container.querySelectorAll('.grid-item');
-
-    // Swap grid items if there are exactly two
     if (gridItems.length === 2) {
       const firstItem = gridItems[0];
       const secondItem = gridItems[1];
@@ -169,20 +167,11 @@ function swapGridItems() {
   });
 }
 
-// Function to handle screen resize
-function handleScreenResize() {
-  const screenWidth = window.innerWidth;
-
-  // Call the function to swap grid items on screen resize
-  swapGridItems();
-}
-
 // Event listener for window load
 window.addEventListener('load', swapGridItems);
 
 // Event listener for window resize
-window.addEventListener('resize', handleScreenResize);
-
+window.addEventListener('resize', swapGridItems);
 
 
 
