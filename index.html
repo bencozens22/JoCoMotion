@@ -153,8 +153,6 @@
         contactFormSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-// Function to adjust grid container classes and swap grid items based on screen width
-// Function to swap grid items inside .grid-container-reverse
 // Function to debounce a function call
 function debounce(func, delay) {
   let timeout;
@@ -183,14 +181,15 @@ function adjustGridClassesAndSwapItems() {
   });
 }
 
-// Function to handle screen resize (debounced)
-const debouncedResize = debounce(adjustGridClassesAndSwapItems, 250);
+// Function to handle scrolling (debounced)
+const debouncedScroll = debounce(adjustGridClassesAndSwapItems, 250);
 
 // Event listener for window load
 window.addEventListener('load', adjustGridClassesAndSwapItems);
 
-// Event listener for debounced window resize
-window.addEventListener('resize', debouncedResize);
+// Event listener for debounced scroll
+window.addEventListener('scroll', debouncedScroll);
+
 
 
 </script>
